@@ -1,0 +1,553 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Import/IMG_5351.PNG" type="Texture" id=1]
+[ext_resource path="res://Import/IMG_5364.PNG" type="Texture" id=2]
+[ext_resource path="res://Import/IMG_5358.PNG" type="Texture" id=3]
+[ext_resource path="res://Import/IMG_5354.PNG" type="Texture" id=4]
+[ext_resource path="res://Import/IMG_5353.PNG" type="Texture" id=5]
+[ext_resource path="res://Import/IMG_5352.PNG" type="Texture" id=6]
+[ext_resource path="res://Import/IMG_5359.PNG" type="Texture" id=7]
+[ext_resource path="res://Import/IMG_5360.PNG" type="Texture" id=8]
+[ext_resource path="res://Import/IMG_5357.PNG" type="Texture" id=9]
+[ext_resource path="res://Import/IMG_5363.PNG" type="Texture" id=10]
+[ext_resource path="res://Import/IMG_5356.PNG" type="Texture" id=11]
+[ext_resource path="res://Import/IMG_5362.PNG" type="Texture" id=12]
+[ext_resource path="res://Import/IMG_5361.PNG" type="Texture" id=13]
+[ext_resource path="res://Import/IMG_5355.PNG" type="Texture" id=14]
+[ext_resource path="res://Import/IMG_5367.PNG" type="Texture" id=15]
+[ext_resource path="res://Import/IMG_5366.PNG" type="Texture" id=16]
+[ext_resource path="res://Import/IMG_5370.PNG" type="Texture" id=17]
+[ext_resource path="res://Import/IMG_5368.PNG" type="Texture" id=18]
+[ext_resource path="res://Import/IMG_5369.PNG" type="Texture" id=19]
+[ext_resource path="res://Script/Battle_Screen.gd" type="Script" id=21]
+[ext_resource path="res://Import/Button_Idea.PNG" type="Texture" id=22]
+
+[sub_resource type="Animation" id=1]
+resource_name = "HeartMove"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heart:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 710, 0 ), Vector2( 0, 0 ), Vector2( 710, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 120.0
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bubbles:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 120 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 7600 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="Battle_Screen" type="Node2D"]
+script = ExtResource( 21 )
+
+[node name="Screen_Image" type="Node2D" parent="."]
+
+[node name="MainBG" type="Sprite" parent="Screen_Image"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Bubbles" type="Node2D" parent="Screen_Image"]
+position = Vector2( 0, 7600 )
+
+[node name="Bubbles" type="Sprite" parent="Screen_Image/Bubbles"]
+position = Vector2( 0, -1520 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Bubbles3" type="Sprite" parent="Screen_Image/Bubbles"]
+position = Vector2( 0, -7600 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Bubbles2" type="Sprite" parent="Screen_Image/Bubbles"]
+position = Vector2( 0, -4560 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 6 )
+centered = false
+flip_v = true
+
+[node name="SceneBG" type="Sprite" parent="Screen_Image"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ButtonBG" type="Sprite" parent="Screen_Image"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ActionButtonBG" type="Sprite" parent="Screen_Image"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="AllyA" type="Sprite" parent="Screen_Image"]
+position = Vector2( 10, 350 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="AllyB" type="Sprite" parent="Screen_Image"]
+position = Vector2( 10, 500 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="AllyC" type="Sprite" parent="Screen_Image"]
+position = Vector2( 10, 650 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="MainCharacter" type="Sprite" parent="Screen_Image"]
+position = Vector2( 200, 500 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="EnemyA" type="Sprite" parent="Screen_Image"]
+position = Vector2( 575, 350 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="EnemyB" type="Sprite" parent="Screen_Image"]
+position = Vector2( 575, 500 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="EnemyC" type="Sprite" parent="Screen_Image"]
+position = Vector2( 575, 650 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="MainEnemy" type="Sprite" parent="Screen_Image"]
+position = Vector2( 385, 500 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="QuickTime" type="Sprite" parent="Screen_Image"]
+position = Vector2( 0, 900 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="QickTime_Bar" type="Sprite" parent="Screen_Image/QuickTime"]
+self_modulate = Color( 0.913725, 0.439216, 0.439216, 1 )
+position = Vector2( 100, 7 )
+scale = Vector2( 0.274701, 1 )
+texture = ExtResource( 13 )
+
+[node name="QickTime_Bar2" type="Sprite" parent="Screen_Image/QuickTime/QickTime_Bar"]
+self_modulate = Color( 0.333333, 0.0823529, 0.0823529, 1 )
+scale = Vector2( 0.145772, 1 )
+texture = ExtResource( 13 )
+
+[node name="Heart" type="Sprite" parent="Screen_Image/QuickTime"]
+texture = ExtResource( 22 )
+
+[node name="HeartMotion" type="AnimationPlayer" parent="Screen_Image/QuickTime"]
+anims/HeartMove = SubResource( 1 )
+
+[node name="Animate" type="AnimationPlayer" parent="Screen_Image"]
+autoplay = "Bubbles"
+anims/Bubbles = SubResource( 2 )
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="OptionButton" type="TextureButton" parent="Buttons"]
+margin_left = 620.0
+margin_top = 40.0
+margin_right = 692.0
+margin_bottom = 108.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PerryButton" type="TextureButton" parent="Buttons"]
+margin_left = 60.0
+margin_top = 1050.0
+margin_right = 315.0
+margin_bottom = 1218.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/PerryButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 40.0
+margin_right = -130.0
+margin_bottom = -83.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.756863, 0.180392, 0.180392, 1 )
+text = "Perry"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefendButton" type="TextureButton" parent="Buttons"]
+margin_left = 60.0
+margin_top = 1220.0
+margin_right = 315.0
+margin_bottom = 1388.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/DefendButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 40.0
+margin_right = -130.0
+margin_bottom = -83.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.756863, 0.180392, 0.180392, 1 )
+text = "Defend"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHealth" type="TextureProgress" parent="Buttons"]
+margin_left = 30.0
+margin_top = 175.0
+margin_right = 696.0
+margin_bottom = 215.0
+value = 100.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyHealth" type="TextureProgress" parent="Buttons"]
+margin_left = 356.0
+margin_top = 600.0
+margin_right = 1022.0
+margin_bottom = 640.0
+rect_scale = Vector2( 0.3, 0.3 )
+value = 100.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainAtk" type="TextureButton" parent="Buttons"]
+margin_left = 365.0
+margin_top = 1050.0
+margin_right = 664.0
+margin_bottom = 1103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/MainAtk"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -171.0
+margin_bottom = -28.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.643137, 0.262745, 0.262745, 1 )
+text = "Main Attack"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SupportA" type="TextureButton" parent="Buttons"]
+margin_left = 365.0
+margin_top = 1200.0
+margin_right = 664.0
+margin_bottom = 1253.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/SupportA"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -171.0
+margin_bottom = -28.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.643137, 0.262745, 0.262745, 1 )
+text = "Slot A Empty"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SupportB" type="TextureButton" parent="Buttons"]
+margin_left = 365.0
+margin_top = 1275.0
+margin_right = 664.0
+margin_bottom = 1328.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/SupportB"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -171.0
+margin_bottom = -28.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.643137, 0.262745, 0.262745, 1 )
+text = "Slot B Empty"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SupportC" type="TextureButton" parent="Buttons"]
+margin_left = 365.0
+margin_top = 1350.0
+margin_right = 664.0
+margin_bottom = 1403.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/SupportC"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -171.0
+margin_bottom = -28.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.643137, 0.262745, 0.262745, 1 )
+text = "Slot C Empty"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SwitchChrt" type="TextureButton" parent="Buttons"]
+margin_top = 965.0
+margin_right = 234.0
+margin_bottom = 1025.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/SwitchChrt"]
+margin_right = 99.0
+margin_bottom = 29.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.6, 0.239216, 0.239216, 1 )
+text = "Items"
+align = 1
+valign = 1
+
+[node name="RoomLevel" type="Label" parent="Buttons"]
+margin_left = 8.49487
+margin_top = 71.7344
+margin_right = 48.4949
+margin_bottom = 85.7344
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0.968627, 0.592157, 0.592157, 1 )
+custom_colors/font_outline_modulate = Color( 0.262745, 0.0431373, 0.0431373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainHealth" type="Label" parent="Buttons"]
+margin_left = 46.2498
+margin_top = 208.596
+margin_right = 86.2498
+margin_bottom = 222.596
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.937255, 0.556863, 0.556863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyHealthNumber" type="Label" parent="Buttons"]
+margin_left = 445.058
+margin_top = 611.647
+margin_right = 485.058
+margin_bottom = 625.647
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.937255, 0.556863, 0.556863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName" type="Label" parent="Buttons"]
+margin_left = 409.036
+margin_top = 865.918
+margin_right = 449.036
+margin_bottom = 879.918
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.937255, 0.556863, 0.556863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Enemiess" type="Node2D" parent="Characters"]
+
+[node name="Main_Enemy" type="Node2D" parent="Characters/Enemiess"]
+position = Vector2( 455, 465 )
+
+[node name="Enemy_SupportA" type="Node2D" parent="Characters/Enemiess"]
+position = Vector2( 650, 300 )
+
+[node name="Enemy_SupportB" type="Node2D" parent="Characters/Enemiess"]
+position = Vector2( 650, 465 )
+
+[node name="Enemy_SupportC" type="Node2D" parent="Characters/Enemiess"]
+position = Vector2( 650, 630 )
+
+[node name="Main_Character" type="Node2D" parent="Characters"]
+position = Vector2( 266, 465 )
+
+[node name="SupportA" type="Node2D" parent="Characters"]
+position = Vector2( 80, 300 )
+
+[node name="SupportB" type="Node2D" parent="Characters"]
+position = Vector2( 80, 465 )
+
+[node name="SupportC" type="Node2D" parent="Characters"]
+position = Vector2( 80, 630 )
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Main" type="Area2D" parent="Areas"]
+position = Vector2( 268, 545 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Main"]
+shape = SubResource( 3 )
+
+[node name="Main_Enemy" type="Area2D" parent="Areas"]
+position = Vector2( 455, 545 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Main_Enemy"]
+shape = SubResource( 3 )
+
+[node name="First_Support" type="Area2D" parent="Areas"]
+position = Vector2( 80, 365 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/First_Support"]
+shape = SubResource( 3 )
+
+[node name="Second_Support" type="Area2D" parent="Areas"]
+position = Vector2( 74, 525 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Second_Support"]
+shape = SubResource( 3 )
+
+[node name="Third_Support" type="Area2D" parent="Areas"]
+position = Vector2( 80, 665 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Third_Support"]
+shape = SubResource( 3 )
+
+[node name="Enemy_First_Support" type="Area2D" parent="Areas"]
+position = Vector2( 650, 365 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Enemy_First_Support"]
+shape = SubResource( 3 )
+
+[node name="Enemy_Second_Support" type="Area2D" parent="Areas"]
+position = Vector2( 650, 525 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Enemy_Second_Support"]
+shape = SubResource( 3 )
+
+[node name="Enemy_Third_Support" type="Area2D" parent="Areas"]
+position = Vector2( 650, 665 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Enemy_Third_Support"]
+shape = SubResource( 3 )
+
+[node name="Attacks" type="Node2D" parent="."]
+position = Vector2( 360, 545 )
+
+[node name="TurnTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Blocker" type="Node2D" parent="."]
+position = Vector2( 353.705, 1028.18 )
+
+[node name="TextureButton" type="TextureButton" parent="Blocker"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.45, 0.25 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeadNode" type="Node2D" parent="Blocker"]
+position = Vector2( -730, 0 )
+
+[node name="TextureButton2" type="TextureButton" parent="Blocker/DeadNode"]
+margin_right = 720.0
+margin_bottom = 1520.0
+rect_scale = Vector2( 0.45, 0.25 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemHolder" type="Node2D" parent="."]
+[connection signal="pressed" from="Buttons/OptionButton" to="." method="_on_OptionButton_pressed"]
+[connection signal="pressed" from="Buttons/PerryButton" to="." method="_on_PerryButton_pressed"]
+[connection signal="pressed" from="Buttons/DefendButton" to="." method="_on_DefendButton_pressed"]
+[connection signal="pressed" from="Buttons/MainAtk" to="." method="_on_MainAtk_pressed"]
+[connection signal="pressed" from="Buttons/SupportA" to="." method="_on_SupportA_pressed"]
+[connection signal="pressed" from="Buttons/SupportB" to="." method="_on_SupportB_pressed"]
+[connection signal="pressed" from="Buttons/SupportC" to="." method="_on_SupportC_pressed"]
+[connection signal="pressed" from="Buttons/SwitchChrt" to="." method="_on_SwitchChrt_pressed"]
+[connection signal="area_entered" from="Areas/Main" to="." method="_on_Main_area_entered"]
+[connection signal="area_entered" from="Areas/Main_Enemy" to="." method="_on_Main_Enemy_area_entered"]
+[connection signal="timeout" from="TurnTimer" to="." method="_on_TurnTimer_timeout"]

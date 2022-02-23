@@ -1,0 +1,118 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://Import/IMG_5379.PNG" type="Texture" id=1]
+[ext_resource path="res://Import/IMG_5375.PNG" type="Texture" id=2]
+[ext_resource path="res://Import/IMG_5378.PNG" type="Texture" id=3]
+[ext_resource path="res://Script/Norm_Ventusr_Restricted.gd" type="Script" id=4]
+[ext_resource path="res://Import/IMG_5390.PNG" type="Texture" id=5]
+[ext_resource path="res://Import/IMG_5391.PNG" type="Texture" id=6]
+[ext_resource path="res://Import/IMG_5389.PNG" type="Texture" id=7]
+[ext_resource path="res://Import/IMG_5393.PNG" type="Texture" id=8]
+[ext_resource path="res://Import/IMG_5394.PNG" type="Texture" id=9]
+[ext_resource path="res://Import/IMG_5395.PNG" type="Texture" id=10]
+[ext_resource path="res://Import/IMG_5396.PNG" type="Texture" id=11]
+[ext_resource path="res://Import/IMG_5397.PNG" type="Texture" id=12]
+[ext_resource path="res://Import/IMG_5392.PNG" type="Texture" id=13]
+[ext_resource path="res://Import/IMG_5407.PNG" type="Texture" id=14]
+[ext_resource path="res://Import/IMG_5404.PNG" type="Texture" id=15]
+[ext_resource path="res://Import/IMG_5405.PNG" type="Texture" id=16]
+[ext_resource path="res://Import/IMG_5408.PNG" type="Texture" id=17]
+[ext_resource path="res://Import/IMG_5409.PNG" type="Texture" id=18]
+[ext_resource path="res://Import/IMG_5406.PNG" type="Texture" id=19]
+[ext_resource path="res://Import/IMG_5424.PNG" type="Texture" id=20]
+[ext_resource path="res://Import/IMG_5422.PNG" type="Texture" id=21]
+[ext_resource path="res://Import/IMG_5423.PNG" type="Texture" id=22]
+[ext_resource path="res://Import/IMG_5426.PNG" type="Texture" id=23]
+[ext_resource path="res://Import/IMG_5421.PNG" type="Texture" id=24]
+[ext_resource path="res://Import/IMG_5420.PNG" type="Texture" id=25]
+[ext_resource path="res://Import/IMG_5425.PNG" type="Texture" id=26]
+[ext_resource path="res://Import/IMG_5427.PNG" type="Texture" id=27]
+[ext_resource path="res://Import/IMG_5428.PNG" type="Texture" id=28]
+[ext_resource path="res://Import/IMG_5429.PNG" type="Texture" id=29]
+[ext_resource path="res://Import/IMG_5438.PNG" type="Texture" id=30]
+[ext_resource path="res://Import/IMG_5439.PNG" type="Texture" id=31]
+[ext_resource path="res://Import/IMG_5441.PNG" type="Texture" id=32]
+[ext_resource path="res://Import/IMG_5442.PNG" type="Texture" id=33]
+[ext_resource path="res://Import/IMG_5443.PNG" type="Texture" id=34]
+[ext_resource path="res://Import/IMG_5444.PNG" type="Texture" id=35]
+[ext_resource path="res://Import/IMG_5440.PNG" type="Texture" id=36]
+[ext_resource path="res://Import/IMG_5454.PNG" type="Texture" id=37]
+[ext_resource path="res://Import/IMG_5451.PNG" type="Texture" id=38]
+[ext_resource path="res://Import/IMG_5453.PNG" type="Texture" id=39]
+[ext_resource path="res://Import/IMG_5450.PNG" type="Texture" id=40]
+[ext_resource path="res://Import/IMG_5452.PNG" type="Texture" id=41]
+[ext_resource path="res://Import/IMG_5460.PNG" type="Texture" id=42]
+[ext_resource path="res://Import/IMG_5461.PNG" type="Texture" id=43]
+[ext_resource path="res://Import/IMG_5462.PNG" type="Texture" id=44]
+[ext_resource path="res://Import/IMG_5463.PNG" type="Texture" id=45]
+[ext_resource path="res://Import/IMG_5464.PNG" type="Texture" id=46]
+[ext_resource path="res://Import/IMG_5471.PNG" type="Texture" id=47]
+[ext_resource path="res://Import/IMG_5470.PNG" type="Texture" id=48]
+[ext_resource path="res://Import/IMG_5472.PNG" type="Texture" id=49]
+[ext_resource path="res://Import/IMG_5469.PNG" type="Texture" id=50]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "Faint",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Powerup",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Defense",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 30 ), ExtResource( 2 ), ExtResource( 30 ), ExtResource( 2 ), ExtResource( 30 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "Win",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Blocked",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Heal",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 38 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "Damage",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 39, 87 )
+
+[node name="Norm_Ventusr_Restricted" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="Hitbox" type="Area2D" parent="." groups=[
+"Character",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 2 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

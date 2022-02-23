@@ -1,0 +1,184 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Import/IMG_5523.PNG" type="Texture" id=1]
+[ext_resource path="res://Import/IMG_5525.PNG" type="Texture" id=2]
+[ext_resource path="res://Import/IMG_5352.PNG" type="Texture" id=3]
+[ext_resource path="res://Import/IMG_5364.PNG" type="Texture" id=4]
+[ext_resource path="res://Import/IMG_5363.PNG" type="Texture" id=5]
+[ext_resource path="res://Import/IMG_5366.PNG" type="Texture" id=6]
+[ext_resource path="res://Import/IMG_5520.PNG" type="Texture" id=7]
+[ext_resource path="res://Import/IMG_5375.PNG" type="Texture" id=8]
+[ext_resource path="res://Script/Team_Organize.gd" type="Script" id=9]
+[ext_resource path="res://Import/IMG_5443.PNG" type="Texture" id=10]
+[ext_resource path="res://Import/IMG_5533.PNG" type="Texture" id=11]
+[ext_resource path="res://Import/IMG_5540.PNG" type="Texture" id=12]
+[ext_resource path="res://Import/IMG_5554.PNG" type="Texture" id=13]
+[ext_resource path="res://Import/IMG_5547.PNG" type="Texture" id=14]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Motion"
+length = 120.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 120 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 3040 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Character",
+"speed": 5.0
+} ]
+
+[node name="Team_Organize" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Organize_Image" type="Node2D" parent="."]
+
+[node name="MainBG" type="Sprite" parent="Organize_Image"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Bubbles" type="Node2D" parent="Organize_Image"]
+
+[node name="Bubble1" type="Sprite" parent="Organize_Image/Bubbles"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Bubble2" type="Sprite" parent="Organize_Image/Bubbles"]
+position = Vector2( 0, -1520 )
+texture = ExtResource( 3 )
+centered = false
+flip_v = true
+
+[node name="Bubble3" type="Sprite" parent="Organize_Image/Bubbles"]
+position = Vector2( 0, -3040 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BubbleAnim" type="AnimationPlayer" parent="Organize_Image/Bubbles"]
+autoplay = "Motion"
+anims/Motion = SubResource( 1 )
+
+[node name="Overlay" type="Sprite" parent="Organize_Image"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="SupportA" type="TextureButton" parent="Buttons"]
+margin_left = 80.0
+margin_top = 200.0
+margin_right = 214.0
+margin_bottom = 290.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SupportB" type="TextureButton" parent="Buttons"]
+margin_left = 80.0
+margin_top = 380.0
+margin_right = 214.0
+margin_bottom = 470.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SupportC" type="TextureButton" parent="Buttons"]
+margin_left = 80.0
+margin_top = 560.0
+margin_right = 214.0
+margin_bottom = 650.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="TextureButton" parent="Buttons"]
+margin_left = 400.0
+margin_top = 380.0
+margin_right = 534.0
+margin_bottom = 470.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="TextureButton" parent="Buttons"]
+margin_left = 608.313
+margin_top = 44.9492
+margin_right = 680.313
+margin_bottom = 112.949
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Character_Text" type="RichTextLabel" parent="Buttons"]
+margin_left = 24.0
+margin_top = 1115.0
+margin_right = 358.0
+margin_bottom = 1290.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Buttons"]
+margin_left = 50.0
+margin_top = 887.0
+margin_right = 668.0
+margin_bottom = 1061.0
+items = [ "Ventusr (N)", ExtResource( 8 ), false, "Brooke (N)", ExtResource( 7 ), false, "Remove", ExtResource( 10 ), false, "Tava", ExtResource( 11 ), false, "Yaooan", ExtResource( 12 ), false, "Queen", ExtResource( 13 ), false, "Guard", ExtResource( 14 ), false ]
+allow_reselect = true
+max_columns = 0
+fixed_icon_size = Vector2( 150, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Character_Display" type="Node2D" parent="."]
+
+[node name="SupportA" type="AnimatedSprite" parent="Character_Display"]
+position = Vector2( 150, 165 )
+frames = SubResource( 2 )
+animation = "Character"
+
+[node name="SupportB" type="AnimatedSprite" parent="Character_Display"]
+position = Vector2( 150, 350 )
+frames = SubResource( 2 )
+animation = "Character"
+
+[node name="SupportC" type="AnimatedSprite" parent="Character_Display"]
+position = Vector2( 150, 530 )
+frames = SubResource( 2 )
+animation = "Character"
+
+[node name="Main" type="AnimatedSprite" parent="Character_Display"]
+position = Vector2( 470, 350 )
+frames = SubResource( 2 )
+animation = "Character"
+[connection signal="pressed" from="Buttons/SupportA" to="." method="_on_SupportA_pressed"]
+[connection signal="pressed" from="Buttons/SupportB" to="." method="_on_SupportB_pressed"]
+[connection signal="pressed" from="Buttons/SupportC" to="." method="_on_SupportC_pressed"]
+[connection signal="pressed" from="Buttons/Main" to="." method="_on_Main_pressed"]
+[connection signal="pressed" from="Buttons/OptionButton" to="." method="_on_OptionButton_pressed"]
+[connection signal="item_selected" from="Buttons/ItemList" to="." method="_on_ItemList_item_selected"]

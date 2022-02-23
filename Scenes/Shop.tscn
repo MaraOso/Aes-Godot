@@ -1,0 +1,151 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Import/IMG_5480.PNG" type="Texture" id=1]
+[ext_resource path="res://Script/Shop.gd" type="Script" id=2]
+[ext_resource path="res://Import/IMG_5363.PNG" type="Texture" id=3]
+[ext_resource path="res://Import/IMG_5366.PNG" type="Texture" id=4]
+[ext_resource path="res://Import/IMG_5482.PNG" type="Texture" id=5]
+[ext_resource path="res://Import/IMG_5487.PNG" type="Texture" id=6]
+[ext_resource path="res://Import/IMG_5484.PNG" type="Texture" id=7]
+[ext_resource path="res://Import/IMG_5491.PNG" type="Texture" id=9]
+[ext_resource path="res://Import/IMG_5488.PNG" type="Texture" id=10]
+[ext_resource path="res://Import/IMG_5443.PNG" type="Texture" id=11]
+[ext_resource path="res://Import/IMG_5490.PNG" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Shop_Image" type="Node2D" parent="."]
+
+[node name="MainBG" type="Sprite" parent="Shop_Image"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="OptionsButton" type="TextureButton" parent="Buttons"]
+margin_left = 622.254
+margin_top = 19.799
+margin_right = 694.254
+margin_bottom = 87.799
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currency" type="Label" parent="Buttons"]
+margin_left = 36.7695
+margin_top = 28.2843
+margin_right = 76.7695
+margin_bottom = 42.2843
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0.207843, 0.262745, 0.345098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Buttons"]
+margin_left = 291.482
+margin_top = 695.031
+margin_right = 331.482
+margin_bottom = 709.031
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0.207843, 0.262745, 0.345098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemsDisplay" type="Node2D" parent="."]
+
+[node name="Defender" type="Node2D" parent="ItemsDisplay"]
+position = Vector2( 200, 400 )
+
+[node name="DefenderButton" type="TextureButton" parent="ItemsDisplay/Defender"]
+margin_right = 256.0
+margin_bottom = 256.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_Repair" type="Node2D" parent="ItemsDisplay"]
+position = Vector2( -300, 400 )
+
+[node name="BodyRepair_Button" type="TextureButton" parent="ItemsDisplay/Body_Repair"]
+margin_right = 512.0
+margin_bottom = 512.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Booster" type="Node2D" parent="ItemsDisplay"]
+position = Vector2( 700, 400 )
+
+[node name="BoosterButton" type="TextureButton" parent="ItemsDisplay/Booster"]
+margin_right = 256.0
+margin_bottom = 256.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ObtainedItems" type="Node2D" parent="."]
+
+[node name="FirstObj" type="Node2D" parent="ObtainedItems"]
+position = Vector2( 110, 1100 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ObtainedItems/FirstObj"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="SecondObj" type="Node2D" parent="ObtainedItems"]
+position = Vector2( 330, 1100 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ObtainedItems/SecondObj"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="ThirdObj" type="Node2D" parent="ObtainedItems"]
+position = Vector2( 550, 1100 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ObtainedItems/ThirdObj"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="FourthObj" type="Node2D" parent="ObtainedItems"]
+position = Vector2( 110, 1330 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ObtainedItems/FourthObj"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="FifthObj" type="Node2D" parent="ObtainedItems"]
+position = Vector2( 330, 1330 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ObtainedItems/FifthObj"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="SixthObj" type="Node2D" parent="ObtainedItems"]
+position = Vector2( 550, 1330 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ObtainedItems/SixthObj"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="ItemsDisplay/Defender/DefenderButton" to="." method="_on_DefenderButton_pressed"]
+[connection signal="pressed" from="ItemsDisplay/Body_Repair/BodyRepair_Button" to="." method="_on_BodyRepair_Button_pressed"]
+[connection signal="pressed" from="ItemsDisplay/Booster/BoosterButton" to="." method="_on_BoosterButton_pressed"]
